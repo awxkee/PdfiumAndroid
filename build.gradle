@@ -39,12 +39,21 @@ afterEvaluate {
 android {
     compileSdkVersion 33
 
+    ndkVersion '25.1.8937393'
+
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 33
         versionCode 1
         versionName "1.0.0"
     }
+
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -54,7 +63,7 @@ android {
 
     sourceSets{
         main {
-            jni.srcDirs = []
+            jni.srcDirs = ['src/main/jni']
             jniLibs.srcDir 'src/main/libs'
         }
     }
