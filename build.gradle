@@ -27,7 +27,7 @@ afterEvaluate {
         publications {
             mavenJava(MavenPublication) {
                 groupId = 'com.github.awxkee'
-                artifactId = ' PdfiumAndroid'
+                artifactId = 'PdfiumAndroid'
                 version = '1.0.0'
                 from components.release
                 artifact androidSourcesJar
